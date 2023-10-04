@@ -1,0 +1,36 @@
+﻿@model Unidad2Actividad1.Models.ViewModels.IndexClaseViewModel
+
+@{   
+    Layout = "MainLayout";
+}
+ 
+<style>
+    .img{
+        width:200px;
+        height:200px;
+        border-radius:20px;
+    }
+
+    .img:hover{
+        padding:10px;
+    }
+</style>
+
+<h1>
+    <img src="~/clases/@(Model.Id).png" /> @Model.NombreA
+</h1> 
+
+<div class="listaEspecies2"> 
+    @foreach (var e in Model.ListaEspecie)
+    {
+         <a href="~/Home/Deta/@e.Especie.Replace(' ','-')">
+            <img class="img" src="~/especies/@(e.Id).jpg" title="@e.Especie" />
+         </a> 
+    }
+</div>
+
+<script>
+
+    var c = document.querySelector("main h1 img").cloneNode();
+    document.querySelector("main h1").appendChild(c);
+</script>

@@ -1,0 +1,20 @@
+﻿@model Unidad2Actividad1.Models.ViewModels.DetallesAnimalViewModel
+@{
+    ViewData["Title"] = "Detalles";
+
+    Layout = "MainLayout";
+}
+
+<div class="especieficha1">
+    <img src="~/especies/@(Model.Id).jpg" />
+    <div>
+        <h1>@Model.Especie</h1>
+        <p><label>Clase:</label><a href="~/Home/Clase/@Model.ClaseAnimal">@Model.ClaseAnimal</a></p>
+        <p><label>Peso:</label>@(Model.PesoAnimal) Kg</p>
+        <p><label>Tamaño:</label>@(Model.TamañoAnimal) cm</p>
+        <p><label>Habitat:</label>@Model.HabitatAnimal</p>
+        <p><label>Descripción:</label></p>
+        <p>@Model.DescripcionDeAnimal</p>
+    </div>
+    <a href="~/Home/ClasA/@Model.ClaseAnimal">Regresar</a>
+</div>
